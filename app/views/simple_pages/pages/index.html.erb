@@ -1,0 +1,17 @@
+<article>
+  <header>
+    <h1><%= t('.title') %></h1>
+  </header>
+
+  <%= render_list class: 'nav nav-tabs' do |li|
+    if can? :new, SimplePages::Page
+      li << [link_to(t('helpers.new'), new_page_path), { class: 'pull-right' }]
+    end
+  end %>
+
+  <%= render 'table', pages: @pages %>
+
+  <footer>
+    <%= render 'application/pagination', collection: @pages %>
+  </footer>
+</article>

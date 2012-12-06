@@ -1,0 +1,13 @@
+zh-TW:
+  simple_pages:
+    layout_at:
+      header: '頁首'
+      footer: '頁尾'
+      sidebar: '側欄'
+    titles:
+      about: '關於我們'
+      copyright: '版權宣告'
+      help: '協助'
+      privacy: '隱私權'
+      support: '支援'
+      terms-of-service: '服務條款'

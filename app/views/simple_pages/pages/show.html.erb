@@ -1,0 +1,26 @@
+<article>
+  <header>
+    <h1><%= @page.title %></h1>
+  </header>
+
+  <%= render_list class: 'nav nav-tabs' do |li|
+    li << [author_vcard(@page.author.name), { class: 'hidden' }]
+    li << [publish_time(@page.created_at, @page.updated_at), { class: 'meta hidden' }]
+    if signed_in?
+      if can? :index, SimplePages::Page
+        li << [link_to(t('helpers.index'), pages_path), { class: 'pull-right' }]
+      end
+      if can? :edit, @page
+        li << [link_to(t('helpers.edit'), edit_page_path(@page)), { class: 'pull-right' }]
+      end
+    end
+  end %>
+
+  <div>
+    <%= simple_format @page.excerpt %>
+    <%= @page.content.html_safe if @page.content %>
+  </div>
+
+  <footer>
+  </footer>
+</article>

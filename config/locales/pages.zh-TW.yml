@@ -1,0 +1,40 @@
+zh-TW:
+  simple_pages:
+    pages:
+      edit:
+        title: '編輯靜態頁面'
+      index:
+        title: '靜態頁面列表'
+      new:
+        title: '新增靜態頁面'
+      show:
+        published_at: '在 %{time} 刊登'
+        posted_by: '由 %{name} 發布'
+
+  activerecord:
+    models:
+      simple_pages/page: '靜態頁面'
+    attributes:
+      simple_pages/page:
+        url: '網址'
+        title: '標題'
+        excerpt: '摘要（引言）'
+        content: '內容'
+        author: '作者'
+        layout_at: '呈現於'
+        published_at: '發布於'
+        owner: '作者'
+
+  simple_form:
+    labels:
+      simple_pages_page:
+    hints:
+      simple_pages_page:
+    placeholders:
+      simple_pages_page:
+
+  helpers:
+    submit:
+      simple_pages_page:
+        create: '建立%{model}'
+        update: '更新%{model}'

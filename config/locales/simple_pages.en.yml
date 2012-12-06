@@ -1,0 +1,13 @@
+en:
+  simple_pages:
+    layout_at:
+      header: 'header'
+      footer: 'footer'
+      sidebar: 'sidebar'
+    titles:
+      about: 'About'
+      copyright: 'Copyright'
+      help: 'Help'
+      privacy: 'Privacy'
+      support: 'Support'
+      terms-of-service: 'Terms of Service'

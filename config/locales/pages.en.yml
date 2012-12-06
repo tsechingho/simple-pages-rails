@@ -1,0 +1,40 @@
+en:
+  simple_pages:
+    pages:
+      edit:
+        title: 'Editing page'
+      index:
+        title: 'Listing pages'
+      new:
+        title: 'New page'
+      show:
+        published_at: 'published at %{time}'
+        posted_by: 'Posted by'
+
+  activerecord:
+    models:
+      simple_pages/page: 'Page'
+    attributes:
+      simple_pages/page:
+        url: 'URL'
+        title: 'Title'
+        excerpt: 'Excerpt'
+        content: 'Content'
+        author: 'Author'
+        layout_at: 'Layout at'
+        published_at: 'Published at'
+        owner: 'Author'
+
+  simple_form:
+    labels:
+      simple_pages_page:
+    hints:
+      simple_pages_page:
+    placeholders:
+      simple_pages_page:
+
+  helpers:
+    submit:
+      simple_pages_page:
+        create: 'Create %{model}'
+        update: 'Update %{model}'

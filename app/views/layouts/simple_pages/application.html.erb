@@ -1,14 +1,51 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <title>SimplePages</title>
-  <%= stylesheet_link_tag    "simple_pages/application", :media => "all" %>
-  <%= javascript_include_tag "simple_pages/application" %>
+  <meta charset="utf-8">
+
+  <title><%= t('site.title') %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="<%= t('site.author') %>">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <%= stylesheet_link_tag 'simple_pages/application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'application/chromeframe' %>
 
-<%= yield %>
+  <header class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <%= render 'application/header' %>
+      </div>
+    </div>
+  </header>
 
+  <div role="main" id="main" class="container-fluid">
+    <aside role="flash_messages" class="row-fluid">
+      <%= render 'application/flash_messages' %>
+    </aside>
+    <div class="row-fluid">
+      <div class="span12 <%= controller_name %>">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+  <footer id="bigfoot" class="container-fluid">
+    <div class="row-fluid">
+      <%= render 'application/footer' %>
+    </div>
+  </footer>
+
+  <%= javascript_include_tag "simple_pages/application" %>
+  <%= render 'application/google_analytics' if Rails.env.production? %>
 </body>
 </html>

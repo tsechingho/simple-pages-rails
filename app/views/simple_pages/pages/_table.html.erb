@@ -1,0 +1,32 @@
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th><%= SimplePages::Page.human_attribute_name(:title) %></th>
+      <th><%= SimplePages::Page.human_attribute_name(:layout_at) %></th>
+      <th><%= SimplePages::Page.human_attribute_name(:author) %></th>
+      <th><%= SimplePages::Page.human_attribute_name(:published_at) %></th>
+      <th><%= t('helpers.actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% pages.each do |page| %>
+      <tr>
+        <td><%= page.title %></td>
+        <td><%= t(page.layout_at, scope: 'simple_pages.layout_at') if page.layout_at? %></td>
+        <td><%= page.author.name %></td>
+        <td><%= publish_time(page.published_at, page.updated_at) %></td>
+        <%= render_btn_group :td do |btn|
+          if can? :show, page
+            btn << link_to_show(page_path(page))
+          end
+          if can? :edit, page
+            btn << link_to_edit(edit_page_path(page))
+          end
+          if can? :destroy, page
+            btn << link_to_destroy(page_path(page))
+          end
+        end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
