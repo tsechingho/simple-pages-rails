@@ -19,6 +19,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'rails', '~> 3.2.9'
   # gem.add_dependency 'jquery-rails'
+  gem.add_dependency 'rails-theme-helper'
 
   gem.add_development_dependency 'mysql2'
 end
