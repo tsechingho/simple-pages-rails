@@ -5,7 +5,7 @@ require 'simple-pages-rails/version'
 
 Gem::Specification.new do |gem|
   gem.name          = 'simple-pages-rails'
-  gem.version       = Simple::Pages::Rails::VERSION
+  gem.version       = SimplePagesRails::VERSION
   gem.authors       = ['Tse-Ching Ho']
   gem.email         = ['tsechingho@gmail.com']
   gem.description   = %q{This gem provides simple pages with rails engine}
@@ -16,4 +16,9 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
+
+  gem.add_dependency 'rails', '~> 3.2.9'
+  # gem.add_dependency 'jquery-rails'
+
+  gem.add_development_dependency 'mysql2'
 end
