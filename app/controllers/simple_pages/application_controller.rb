@@ -4,7 +4,10 @@ module SimplePages
 
     respond_to :html
 
-    SimplePages.application_controller_modules.each do |module_name|
+    helper ::RailsTheme::Engine.helpers
+    helper SimplePages.helper_modules
+
+    SimplePages.controller_modules.each do |module_name|
       include module_name
     end
   end
