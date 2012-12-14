@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-
-  mount SimplePages::Engine => "/simple_pages"
+  root to: 'simple_pages/pages#index'
+  devise_for :users
 end
