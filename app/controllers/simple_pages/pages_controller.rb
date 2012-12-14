@@ -3,6 +3,7 @@ require_dependency 'simple_pages/application_controller'
 module SimplePages
   class PagesController < ApplicationController
     before_filter :authenticate_session!, except: [:show]
+
     load_resource class: 'SimplePages::Page', only: [:index]
     before_filter :new_page, only: [:new, :create]
     load_resource class: 'SimplePages::Page', find_by: :url, only: [:show, :edit, :update, :destroy]
@@ -10,7 +11,7 @@ module SimplePages
     authorize_resource class: 'SimplePages::Page', except: [:show]
 
     def index
-      @pages = @pages.paginate page: params[:page]
+      @pages = @pages.paginate pagination_options
       respond_with @pages
     end
 
@@ -67,6 +68,10 @@ module SimplePages
       @author_options = @authors.map do |author|
         [author.name, author.simple_page_owner_option]
       end
+    end
+
+    def pagination_options
+      { page: params[:page], per_page: SimplePages.pages_per_page }
     end
   end
 end

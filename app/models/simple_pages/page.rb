@@ -2,25 +2,20 @@ module SimplePages
   class Page < ActiveRecord::Base
     self.table_name = SimplePages.page_table_name
 
-    attr_reader :owner
-
-    attr_accessible :title, :excerpt, :content, :published_at, :owner, :layout_at
+    attr_accessible :title, :excerpt, :content, :published_at, :layout_at
 
     validates :url, presence: true
     validates :title, presence: true
 
-    belongs_to :author, polymorphic: true
-
-    has_many :attachments, as: :resource
-
     acts_as_url :title
 
     scope :published, lambda { where('published_at <= ?', Time.zone.now) }
+    scope :layout_at, lambda { |location| where(layout_at: location) }
 
     class << self
       def find_or_create_by_url(attrs)
-        url = attrs.delete(:url)
-        page = find_by_url(url)
+        url = attrs.delete :url
+        page = where(url: url).first
         if page.nil?
           page = create(attrs)
           page.url = url
@@ -34,14 +29,8 @@ module SimplePages
       url
     end
 
-    def owner=(attrs)
-      owner_attrs = attrs.split(',')
-      self.author_type = owner_attrs.first
-      self.author_id = owner_attrs.last
-    end
-
-    SimplePages.page_modules.each do |module_name|
-      include module_name
+    SimplePages.page_modules.each do |module_class|
+      include module_class
     end
   end
 end

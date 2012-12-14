@@ -8,7 +8,7 @@ module SimplePages
         :'data-updated' => (updated_at != published_at ? 'true' : nil ),
         class: 'published_at'
       }
-      content_tag(:time, l(published_at, format: :long), options)
+      content_tag :time, ::I18n.l(published_at, format: :long), options
     end
 
     def author_vcard(author)
