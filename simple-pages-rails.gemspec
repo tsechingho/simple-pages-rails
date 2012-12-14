@@ -18,7 +18,11 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_dependency 'rails', '~> 3.2.9'
+  gem.add_dependency 'will_paginate'
   gem.add_dependency 'rails-theme-helper'
+  gem.add_dependency 'chosen-rails'
+  gem.add_dependency 'ckeditor_rails'
+  gem.add_dependency 'stringex'
 
   gem.add_development_dependency 'mysql2'
 end

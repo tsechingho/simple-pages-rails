@@ -1,5 +1,3 @@
-require 'rails-theme-helper'
-
 require 'simple_pages/engine'
 require 'simple_pages/controllers/page_layout_at'
 require 'simple_pages/models/page_attachment'
