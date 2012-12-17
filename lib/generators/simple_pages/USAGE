@@ -1,0 +1,11 @@
+Description:
+    Copy a SimplePages initializer and libraries to your Rails App
+
+Example:
+    rails generate simple_pages:install
+
+    This will create/modify:
+        lib/devise_ext.rb
+        lib/cancan_ext.rb
+        config/initializers/simple_pages.rb
+        app/models/user.rb
