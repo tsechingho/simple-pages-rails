@@ -29,8 +29,6 @@ module SimplePages
       url
     end
 
-    SimplePages.page_modules.each do |module_class|
-      include module_class
-    end
+    SimplePages.page_modules.each { |module_name| include module_name }
   end
 end

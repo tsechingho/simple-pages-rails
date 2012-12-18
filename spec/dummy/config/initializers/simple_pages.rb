@@ -5,6 +5,9 @@ SimplePages.configure do |config|
   # mixin controller modules.
   config.controller_modules += [DeviseExt, CanCanExt]
 
+  # add extra page layout location, default to %w{header footer}
+  # config.extra_page_layout += []
+
   # mixin helper modules.
   # config.helper_modules += []
 

@@ -11,6 +11,9 @@ module SimplePages
     SimplePages::Controllers::PageLayoutAt
   ]
 
+  mattr_accessor :extra_page_layout
+  @@extra_page_layout = []
+
   mattr_accessor :helper_modules
   @@helper_modules = []
 
