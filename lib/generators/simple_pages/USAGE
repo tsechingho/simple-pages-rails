@@ -8,4 +8,6 @@ Example:
         lib/devise_ext.rb
         lib/cancan_ext.rb
         config/initializers/simple_pages.rb
+        config/routes.rb
+        app/controllers/application_controller.rb
         app/models/user.rb
