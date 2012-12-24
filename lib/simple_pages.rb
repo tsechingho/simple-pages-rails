@@ -4,6 +4,7 @@ require 'simple_pages/models/page_attachment'
 require 'simple_pages/models/page_author'
 require 'simple_pages/models/page_locale'
 require 'simple_pages/models/page_owner'
+require 'simple_pages/models/page_url'
 
 module SimplePages
   mattr_accessor :controller_modules
@@ -22,6 +23,7 @@ module SimplePages
 
   mattr_accessor :page_modules
   @@page_modules = [
+    SimplePages::Models::PageUrl,
     SimplePages::Models::PageOwner,
     SimplePages::Models::PageLocale,
     SimplePages::Models::PageAttachment

@@ -27,14 +27,16 @@ en:
 
   simple_form:
     labels:
-      simple_pages_page:
+      page:
     hints:
-      simple_pages_page:
+      page:
+        url: 'Only characters(a-zA-Z), numbers(0-9), dash(-) and underline(_) are allowed. It will be given if left blank.'
+        published_at: 'It will not show up if blank.'
     placeholders:
-      simple_pages_page:
+      page:
 
   helpers:
     submit:
-      simple_pages_page:
+      page:
         create: 'Create %{model}'
         update: 'Update %{model}'

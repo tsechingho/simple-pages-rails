@@ -27,14 +27,16 @@ zh-TW:
 
   simple_form:
     labels:
-      simple_pages_page:
+      page:
     hints:
-      simple_pages_page:
+      page:
+        url: '僅限使用英文字母（ a-zA-Z ）、數字（ 0-9 ）、破折號（ - ）與底線（ _ ）。若不輸入，則由系統自行賦予。'
+        published_at: '若沒有設定時間，則不會顯示在網站中。'
     placeholders:
-      simple_pages_page:
+      page:
 
   helpers:
     submit:
-      simple_pages_page:
+      page:
         create: '建立%{model}'
         update: '更新%{model}'

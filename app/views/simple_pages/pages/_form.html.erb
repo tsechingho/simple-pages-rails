@@ -1,6 +1,7 @@
-<%= f.error_notification %>
-
 <div class="form-inputs">
+  <% if can? :update_url, f.object %>
+    <%= f.input :url, input_html: { class: 'span10' } %>
+  <% end %>
   <%= f.input :title, input_html: { class: 'span10' } %>
   <%= f.input :excerpt, as: :text, input_html: { rows: 5, class: 'span10' } %>
   <%= f.input :content, input_html: { class: 'ckeditor' } %>
