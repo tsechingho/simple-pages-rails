@@ -30,7 +30,7 @@ en:
       page:
     hints:
       page:
-        url: 'Only characters(a-zA-Z), numbers(0-9), hyphen(-) and underline(_) are allowed. It will be given if left blank.'
+        url: 'At least 3 characters. Only characters(a-zA-Z), numbers(0-9), underline(_) and hyphen(-) are allowed.<bt>It will be given if left blank.'
         published_at: 'It will not show up if blank.'
     placeholders:
       page:
