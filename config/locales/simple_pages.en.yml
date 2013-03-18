@@ -1,9 +1,10 @@
 en:
   simple_pages:
     layout_at:
-      header: 'header'
-      footer: 'footer'
-      sidebar: 'sidebar'
+      general: 'General'
+      header: 'Header'
+      footer: 'Footer'
+      sidebar: 'Sidebar'
     titles:
       about: 'About'
       copyright: 'Copyright'

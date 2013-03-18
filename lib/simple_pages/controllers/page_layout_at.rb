@@ -6,7 +6,7 @@ module SimplePages
       extend ActiveSupport::Concern
       included do
         cattr_accessor :page_layout_at
-        self.page_layout_at = %w{header footer}
+        self.page_layout_at = %w{general header footer}
 
         helper_method :pages_layout_at
       end

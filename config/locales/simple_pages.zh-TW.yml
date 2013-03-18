@@ -1,6 +1,7 @@
 zh-TW:
   simple_pages:
     layout_at:
+      general: '一般'
       header: '頁首'
       footer: '頁尾'
       sidebar: '側欄'

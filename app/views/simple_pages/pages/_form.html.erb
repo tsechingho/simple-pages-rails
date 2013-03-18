@@ -22,7 +22,10 @@
       value: local_published_at(f.object),
       class: 'datetimepicker'
     } %>
-  <%= f.input :layout_at, as: :select, collection: layout_at_options %>
+  <%= f.input :layout_at,
+    as: :select,
+    collection: layout_at_options,
+    include_blank: false %>
   <%= f.input :cluster,
     as: :select,
     collection: cluster_options,
