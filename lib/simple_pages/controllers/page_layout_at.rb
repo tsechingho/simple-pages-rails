@@ -21,7 +21,7 @@ module SimplePages
       protected
 
       def pages_layout_at(location)
-        SimplePages::Page.layout_at(location).published
+        SimplePages::Page.without_cluster.layout_at(location).published
       end
 
       def load_page_layout_at_options

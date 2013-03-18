@@ -22,6 +22,7 @@ en:
         content: 'Content'
         author: 'Author'
         layout_at: 'Layout at'
+        cluster: 'Cluster'
         published_at: 'Published at'
         owner: 'Author'
 

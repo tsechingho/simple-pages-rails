@@ -59,16 +59,10 @@ module SimplePages
     def load_page_options
       load_author_options
       load_page_layout_at_options
+      load_page_cluster_options
     end
 
     private
-
-    def load_author_options
-      load_authors
-      @author_options = @authors.map do |author|
-        [author.name, author.simple_page_owner_option]
-      end
-    end
 
     def pagination_options
       { page: params[:page], per_page: SimplePages.pages_per_page }

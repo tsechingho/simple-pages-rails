@@ -3,9 +3,31 @@
     <%= f.input :url, input_html: { class: 'span10' } %>
   <% end %>
   <%= f.input :title, input_html: { class: 'span10' } %>
-  <%= f.input :excerpt, as: :text, input_html: { rows: 5, class: 'span10' } %>
+  <%= f.input :excerpt,
+    as: :text,
+    input_html: {
+      rows: 5,
+      class: 'span10'
+    } %>
   <%= f.input :content, input_html: { class: 'ckeditor' } %>
-  <%= f.input :owner, collection: author_options, selected: selected_page_author(f.object), input_html: { class: 'chzn-select' } %>
-  <%= f.input :published_at, as: :string, input_html: { value: local_published_at(f.object), class: 'datetimepicker' }  %>
+  <%= f.input :owner,
+    collection: author_options,
+    selected: selected_page_author(f.object),
+    input_html: {
+      class: 'chzn-select'
+    } %>
+  <%= f.input :published_at,
+    as: :string,
+    input_html: {
+      value: local_published_at(f.object),
+      class: 'datetimepicker'
+    } %>
   <%= f.input :layout_at, as: :select, collection: layout_at_options %>
+  <%= f.input :cluster,
+    as: :select,
+    collection: cluster_options,
+    input_html: {
+      multiple: true,
+      class: 'chzn-select'
+    } %>
 </div>

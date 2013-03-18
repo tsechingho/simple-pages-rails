@@ -22,6 +22,7 @@ zh-TW:
         content: '內容'
         author: '作者'
         layout_at: '呈現於'
+        cluster: '群組'
         published_at: '發布於'
         owner: '作者'
 
