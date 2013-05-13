@@ -6,7 +6,7 @@ module SimplePages
       extend ActiveSupport::Concern
       included do
         attr_accessible :url
-        validates :url, format: { with: /^([\w\-]{3,})$/ }, allow_blank: true
+        validates :url, format: { with: /\A([\w\-]{3,})\z/ }, allow_blank: true
         acts_as_url :title, sync_url: true, only_when_blank: true
       end
 
