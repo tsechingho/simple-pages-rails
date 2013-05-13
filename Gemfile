@@ -14,8 +14,8 @@ gemspec
 # gem 'debugger'
 
 # gems used by the dummy application
-gem 'sass-rails', '~> 3.2.3'
-gem 'coffee-rails', '~> 3.2.1'
+gem 'sass-rails'
+gem 'coffee-rails'
 
 gem 'devise'
 gem 'cancan'
@@ -24,7 +24,7 @@ gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
 
 group :test do
   if RUBY_PLATFORM =~ /darwin/i
-    gem 'rb-fsevent', '~> 0.9.1'
+    gem 'rb-fsevent'
     gem 'growl'
   end
 
