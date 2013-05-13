@@ -18,7 +18,7 @@ module SimplePages
       end
 
       def load_page_cluster_options
-        @cluster_options = ::Role.all.map do |role|
+        @cluster_options = ::Role.enabled.map do |role|
           [t(role.name, scope: 'roles.names'), role.name]
         end
       end

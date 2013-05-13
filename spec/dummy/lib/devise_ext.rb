@@ -20,6 +20,6 @@ module DeviseExt
   end
 
   def load_authors
-    @authors = User.all
+    @authors = User.unscoped
   end
 end
