@@ -36,6 +36,12 @@ module SimplePages
   mattr_accessor :pages_per_page
   @@pages_per_page = 30
 
+  mattr_accessor :permitted_fields
+  @@permitted_fields = [
+    :url, :title, :excerpt, :content, :owner, :published_at,
+    :layout_at, { cluster: [] }
+  ]
+
   def self.configure
     yield self
   end

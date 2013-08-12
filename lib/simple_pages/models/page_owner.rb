@@ -6,7 +6,6 @@ module SimplePages
       extend ActiveSupport::Concern
       included do
         attr_reader :owner
-        attr_accessible :owner
         belongs_to :author, polymorphic: true
       end
 

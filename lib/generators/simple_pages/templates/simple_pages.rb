@@ -19,4 +19,7 @@ SimplePages.configure do |config|
 
   # set per page of pagination for page controller, default to 30.
   # config.pages_per_page = 30
+
+  # Add more allowed fields for strong paramters.
+  #config.permitted_fields += []
 end

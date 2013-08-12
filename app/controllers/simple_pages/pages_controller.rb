@@ -38,7 +38,7 @@ module SimplePages
     end
 
     def update
-      @page.update_attributes params[:page]
+      @page.update_attributes page_params
       if @page.invalid?
         load_page_options
       end
@@ -52,8 +52,16 @@ module SimplePages
 
     protected
 
+    def page_params
+      if params.respond_to? :permit and params.has_key? :page
+        params.require(:page).permit(SimplePages.permitted_fields)
+      else
+        params[:page]
+      end
+    end
+
     def new_page
-      @page = SimplePages::Page.new params[:page]
+      @page = SimplePages::Page.new page_params
     end
 
     def load_page_options

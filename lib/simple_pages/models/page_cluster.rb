@@ -6,7 +6,6 @@ module SimplePages
       extend ActiveSupport::Concern
       included do
         serialize :cluster
-        attr_accessible :cluster
       end
 
       module ClassMethods
