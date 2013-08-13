@@ -15,17 +15,19 @@
         <td><%= t(page.layout_at, scope: 'simple_pages.layout_at') if page.layout_at? %></td>
         <td><%= page.author.name %></td>
         <td><%= publish_time(page.published_at, page.updated_at) %></td>
-        <%= render_btn_group :td do |btn|
-          if can? :show, page
-            btn << link_to_show(page_path(page))
-          end
-          if can? :edit, page
-            btn << link_to_edit(edit_page_path(page))
-          end
-          if can? :destroy, page
-            btn << link_to_destroy(page_path(page))
-          end
-        end %>
+        <td class="actions">
+          <%= render_btn_group do |btn|
+            if can? :show, page
+              btn << link_to_show(page_path(page))
+            end
+            if can? :edit, page
+              btn << link_to_edit(edit_page_path(page))
+            end
+            if can? :destroy, page
+              btn << link_to_destroy(page_path(page))
+            end
+          end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

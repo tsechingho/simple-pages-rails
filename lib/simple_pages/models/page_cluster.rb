@@ -10,7 +10,7 @@ module SimplePages
 
       module ClassMethods
         def without_cluster
-          where(cluster: "--- \n...\n")
+          where(cluster: [nil, "--- \n...\n"])
         end
 
         def with_cluster(name)
