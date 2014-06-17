@@ -9,6 +9,7 @@ module SimplePages
         self.page_layout_at = %w{general header footer}
 
         helper_method :pages_layout_at
+        helper_method :page_layout_at
       end
 
       module ClassMethods
@@ -22,12 +23,6 @@ module SimplePages
 
       def pages_layout_at(location)
         SimplePages::Page.without_cluster.layout_at(location).published
-      end
-
-      def load_page_layout_at_options
-        @layout_at_options = page_layout_at.map do |key|
-          [t(key, scope: 'simple_pages.layout_at'), key]
-        end
       end
     end
   end

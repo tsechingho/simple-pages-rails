@@ -20,28 +20,20 @@ module SimplePages
     end
 
     def new
-      load_page_options
       @page.author = session_user
       respond_with @page
     end
 
     def edit
-      load_page_options
     end
 
     def create
       @page.save
-      if @page.invalid?
-        load_page_options
-      end
       respond_with @page
     end
 
     def update
       @page.update_attributes page_params
-      if @page.invalid?
-        load_page_options
-      end
       respond_with @page
     end
 
@@ -62,10 +54,6 @@ module SimplePages
 
     def new_page
       @page = SimplePages::Page.new page_params
-    end
-
-    def load_page_options
-      load_page_layout_at_options
     end
 
     private

@@ -36,5 +36,11 @@ module SimplePages
         [t(role.name, scope: 'roles.names'), role.name]
       end
     end
+
+    def page_layout_at_options
+      page_layout_at.map do |key|
+        [t(key, scope: 'simple_pages.layout_at'), key]
+      end
+    end
   end
 end

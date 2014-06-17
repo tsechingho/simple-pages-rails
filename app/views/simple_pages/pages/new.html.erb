@@ -12,10 +12,7 @@
   <div>
     <%= simple_form_for @page, as: :page, html: { class: 'form-horizontal' } do |f| %>
       <%= f.error_notification %>
-      <%= render 'form', {
-        f: f,
-        layout_at_options: @layout_at_options
-      } %>
+      <%= render 'form', f: f %>
       <div class="form-actions">
         <%= submit_button f %>
       </div>
