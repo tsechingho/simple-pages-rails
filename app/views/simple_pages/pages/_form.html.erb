@@ -11,7 +11,7 @@
     } %>
   <%= f.input :content, input_html: { class: 'ckeditor' } %>
   <%= f.input :owner,
-    collection: author_options,
+    collection: page_author_options,
     selected: selected_page_author(f.object),
     input_html: {
       class: 'chzn-select'

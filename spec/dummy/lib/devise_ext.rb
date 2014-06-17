@@ -18,8 +18,4 @@ module DeviseExt
   def session_user
     current_user
   end
-
-  def load_authors
-    @authors = User.unscoped
-  end
 end

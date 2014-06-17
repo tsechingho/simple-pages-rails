@@ -24,5 +24,11 @@ module SimplePages
     def local_published_at(object)
       object.published_at? ? object.published_at.localtime : nil
     end
+
+    def page_author_options
+      ::User.unscoped.map do |author|
+        [author.name, author.simple_page_owner_option]
+      end
+    end
   end
 end
