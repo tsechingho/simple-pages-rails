@@ -30,5 +30,11 @@ module SimplePages
         [author.name, author.simple_page_owner_option]
       end
     end
+
+    def page_cluster_options
+      ::Role.enabled.map do |role|
+        [t(role.name, scope: 'roles.names'), role.name]
+      end
+    end
   end
 end

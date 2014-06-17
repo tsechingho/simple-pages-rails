@@ -66,7 +66,6 @@ module SimplePages
 
     def load_page_options
       load_page_layout_at_options
-      load_page_cluster_options
     end
 
     private
