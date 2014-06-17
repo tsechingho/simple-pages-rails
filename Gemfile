@@ -20,7 +20,7 @@ gem 'coffee-rails'
 gem 'devise'
 gem 'cancan'
 gem 'simple_form'
-gem 'anjlab-bootstrap-rails', require: 'bootstrap-rails'
+gem 'anjlab-bootstrap-rails', '< 3.0', require: 'bootstrap-rails'
 
 group :test do
   if RUBY_PLATFORM =~ /darwin/i
